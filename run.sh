@@ -1,7 +1,7 @@
 #!/bin/bash
 
-container=opengl
-image=thewtex/opengl
+container=novnc-ssh-container
+image=novnc-ssh
 port=6080
 extra_run_args=""
 quiet=""
@@ -129,6 +129,7 @@ docker run \
   --name $container \
   ${mount_local} \
   $port_arg \
+  -p 8022:22 \
   $extra_run_args \
   $image >/dev/null
 
