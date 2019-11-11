@@ -1,5 +1,5 @@
 #FROM dockcross/base:latest
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER kinziro
 
 ENV DEFAULT_DOCKCROSS_IMAGE novnc-ssh-container
