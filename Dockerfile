@@ -1,5 +1,5 @@
 #FROM dockcross/base:latest
-FROM ubuntu:18.04
+FROM tensorflow/tensorflow:1.14.0-gpu-py3
 MAINTAINER kinziro
 
 ENV DEFAULT_DOCKCROSS_IMAGE novnc-ssh-container
