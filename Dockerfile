@@ -39,8 +39,8 @@ RUN sed -i.bak -e 's;http://archive.ubuntu.com;http://jp.archive.ubuntu.com;g' /
   python3 get-pip.py && \
   pip install supervisor && \
   apt-get -y clean
-WORKDIR /usr/local/lib/python3.6/dist-packages$
-RUN pip3 install -e git+https://github.com/coderanger/supervisor-stdout.git#egg=supervisor-stdout$
+WORKDIR /usr/local/lib/python3.6/dist-packages
+RUN pip3 install -e git+https://github.com/coderanger/supervisor-stdout.git#egg=supervisor-stdout
 WORKDIR /
 
 RUN echo 'root:P@ssw0rd' | chpasswd
