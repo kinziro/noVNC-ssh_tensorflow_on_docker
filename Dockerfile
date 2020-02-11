@@ -19,9 +19,8 @@ RUN sed -i.bak -e 's;http://archive.ubuntu.com;http://jp.archive.ubuntu.com;g' /
   menu \
   net-tools \
   openbox \
-  python-pip \
+  python3-pip \
   sudo \
-  supervisor \
   tint2 \
   x11-xserver-utils \
   x11vnc \
@@ -37,9 +36,12 @@ RUN sed -i.bak -e 's;http://archive.ubuntu.com;http://jp.archive.ubuntu.com;g' /
   rm -f /usr/share/applications/x11vnc.desktop && \
   apt-get remove -y python-pip && \
   wget https://bootstrap.pypa.io/get-pip.py && \
-  python get-pip.py && \
-  pip install supervisor-stdout && \
+  python3 get-pip.py && \
+  pip install supervisor && \
   apt-get -y clean
+WORKDIR /usr/local/lib/python3.6/dist-packages$
+RUN pip3 install -e git+https://github.com/coderanger/supervisor-stdout.git#egg=supervisor-stdout$
+WORKDIR /
 
 RUN echo 'root:P@ssw0rd' | chpasswd
 
