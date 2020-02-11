@@ -37,6 +37,7 @@ RUN sed -i.bak -e 's;http://archive.ubuntu.com;http://jp.archive.ubuntu.com;g' /
   apt-get remove -y python-pip && \
   wget https://bootstrap.pypa.io/get-pip.py && \
   python3 get-pip.py && \
+  mkdir /var/log/supervisor/ && \
   pip install supervisor && \
   apt-get -y clean
 WORKDIR /usr/local/lib/python3.6/dist-packages
